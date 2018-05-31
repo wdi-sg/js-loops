@@ -13,7 +13,7 @@ Use loops to...
 2. sum up all the elements of the above array
 3. return an array with only odd numbers from the above array
 4. find the last index of a given element in the array, e.g. the last index of 3 is 4.
-Bonus 5. return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
+5. (Bonus) return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
 
 ## Exercise 3
 Examine the phonebook below.
