@@ -9,23 +9,34 @@
 // Once he guesses it correctly, end the loop.
 // Hint: What's the difference between a do-while loop and a while loop?
 
-
-
-
-
-
+// var randInt = Math.floor(Math.random() * 10);
+// var guessInt = prompt('Guess an integer')
+// while(randInt!=guessInt){
+// 	prompt('Wrong, guess again');
+// 	randInt = Math.floor(Math.random() * 10);
+// }
+// alert('Congratulations');
 
 // Exercise 2: Reversing a String
 // ==============================
 // Write a function that takes a string as an argument and returns its reverse. For example, reverseString("abc defg")
 // should return "gfed cba".
 
-
-
-
-
-
-
+// function reverseString(str) {
+//     // Step 1. Use the split() method to return a new array
+//     var splitString = str.split("");
+ 
+//     // Step 2. Use the reverse() method to reverse the new created array
+//     var reverseArray = splitString.reverse();
+ 
+//     // Step 3. Use the join() method to join all elements of the array into a string
+//     var joinArray = reverseArray.join("");
+    
+//     //Step 4. Return the reversed string
+//     return joinArray;
+// }
+// var item = prompt('Enter the word you want to reverse');
+// console.log(reverseString(item));
 
 // Exercise 3
 // ==========
@@ -38,8 +49,45 @@ var numArray = [3, 9, 2, 5, 3, 6, 7, 4, 8, 1, 4, 10, 21, 43, 56, 23, 54, 94, 94,
 // 4. return an array with only odd numbers from the input array, e.g. onlyOdd([1,2,3,4,5]) should return [1,3,5]
 // 5. (Bonus) return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
 
+function reverseArray(){
+	return numArray.reverse();
+}
 
+function doubleBy(){
+	var doubleValue = [];
+	for(var i=0;i<numArray.length;i++){
+		var add = numArray[i]*2;
+		doubleValue.push(add);
+	}
+	return doubleValue
+}
 
+function sum() {
+	var total = 0;
+	for(var i=0;i<numArray.length;i++){
+		total+=numArray[i];
+	}
+	return total
+}
+
+function oddNum(){
+	var odd = [];
+	for(var i=0;i<numArray.length;i++){
+		if(numArray[i]%2!==0){
+			odd.push(numArray[i]);
+		}
+	}
+	return odd
+}
+
+function elementBefore(){
+	var newArray = [];
+
+}//NOT SURE WHAT IS IT ASKING FOR
+// console.log(reverseArray());
+// console.log(doubleBy());
+// console.log(sum());
+// console.log(oddNum());
 
 
 
@@ -59,8 +107,14 @@ var Phonebook = {
     "Herman":   63436894,
 };
 
+function swapValue(){
+	var name = Object.keys(Phonebook);
+	var number = Object.values(Phonebook);
+	Math.random()*name.length;
 
+}	
 
+swapValue();
 
 
 
