@@ -9,22 +9,27 @@
 // Once he guesses it correctly, end the loop.
 // Hint: What's the difference between a do-while loop and a while loop?
 
-
-
-
-
-
+// var randomNumber = Math.floor(Math.random() * 9 + 1);
+// do {
+// 	var guessNumber = prompt("Please guess an integer from 1 to 10:");	
+// 	guessNumber = parseInt(guessNumber);
+// }
+// while(guessNumber !== randomNumber)
+// alert("Well done!");
 
 // Exercise 2: Reversing a String
 // ==============================
 // Write a function that takes a string as an argument and returns its reverse. For example, reverseString("abc defg")
 // should return "gfed cba".
 
-
-
-
-
-
+// function reverseString(str) {
+// 	var result = "";
+// 	for (var i = str.length - 1; i >= 0; i--) {
+// 		result += str.charAt(i);
+// 	}
+// 	return result
+// }
+// console.log(reverseString("hello"));
 
 
 // Exercise 3
@@ -38,10 +43,68 @@ var numArray = [3, 9, 2, 5, 3, 6, 7, 4, 8, 1, 4, 10, 21, 43, 56, 23, 54, 94, 94,
 // 4. return an array with only odd numbers from the input array, e.g. onlyOdd([1,2,3,4,5]) should return [1,3,5]
 // 5. (Bonus) return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
 
+var test = [1,2,3,4];
 
 
+// 1. Reversing array
+
+// function reverseOrder(arr) {
+// 	return arr.reverse();
+// }
+// console.log(reverseOrder(test);
 
 
+// 2. Double up array
+
+// function doubleUp(arr) {
+// 	var result = [];
+// 	arr.forEach(function(el) {
+// 		result.push(el * 2);
+// 	})
+// 	return result;
+// }
+// console.log(doubleUp(test));
+
+
+// 3. Summing up array
+
+// function sumUp(arr) {
+// 	var result = 0;
+// 	for (var i = 0; i < arr.length; i++) {
+// 		result += arr[i];
+// 	}
+// 	return result;
+// }
+// console.log(sumUp(test));
+
+
+// 4. Only odd numbers
+
+// function onlyOdd(arr) {
+// 	var result = [];
+// 	for (var i = 0; i< arr.length; i++) {
+// 		if (arr[i] % 2 !== 0) {
+// 			result.push(arr[i]);
+// 		}
+// 	}
+// 	return result;
+// }
+// console.log(onlyOdd(test));
+
+
+// 5. Bonus array
+
+// function bonus(arr) {
+// 	var result = [];
+// 	for (var i = 0; i < arr.length; i++) {
+// 		var j = i + 1;
+// 		var bonusArray = arr.slice(0, j);
+// 		var addResult = sumUp(bonusArray);
+// 		result.push(addResult);
+// 	}
+// 	return result;
+// }
+// console.log(bonus(test));
 
 
 // Exercise 4
@@ -59,9 +122,15 @@ var Phonebook = {
     "Herman":   63436894,
 };
 
-
-
-
+// function swappy(obj) {
+// 	var newObj = {};
+// 	for (keys in obj) {
+// 		var values = obj[keys];
+// 		newObj[values] = keys;
+// 	}
+// 	return newObj
+// }
+// console.log(swappy(Phonebook));
 
 
 
@@ -74,9 +143,9 @@ var Phonebook = {
 // ==========
 // Examine the array below and the commented out loop that was written to console.log all the names from the array, starting from the last element.
 
-var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "Grace", "Horace", "Ihsan", "Jack"];
+// var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "Grace", "Horace", "Ihsan", "Jack"];
 
-// for (var i = 0; i < testArray.length; i++) {
+// for (var i = testArray.length - 1; i >= 0; i--) { // testArray keeps getting shorter so it stops iterating
 //     var name = testArray.pop();
 //     console.log(name);
 // };
@@ -100,11 +169,13 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // E.g. if the input arrays were var arr1 = [3, 6, 11] and var arr2 = [2, 4, 5, 8, 9] then mergeSortArrays(arr1, arr2)
 // should return [2, 3, 4, 5, 6, 8, 9, 11].
 
-
-
-
-
-
+// var test2 = [8,7,6,5];
+// function mergeSortArray(arr1, arr2) {
+// 	var result = arr1.concat(arr2);
+// 	result = result.sort();
+// 	return result;
+// }
+// console.log(mergeSortArray(test, test2));
 
 
 
@@ -115,10 +186,28 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // ===============================================
 // .*.X.*.X.*.X.*. (This pattern continues. Your loop should be able to console.log as long a pattern as required. Each iteration of your loop should console.log only 1 character.)
 
-
-
-
-
+// function picture(num) {
+// 	var result = ""
+// 	var x = 2;
+// 	for (var i = 0; i < num; i++) {
+// 		if (i % 2 === 0) {
+// 			result += ".";
+// 		} else {
+// 			if (x % 2 === 0) {
+// 				result += "*";
+// 			} else {
+// 				result += "X";
+// 			}
+// 			if (x === 1) {
+// 				x = 2;
+// 			} else {
+// 				x = 1;
+// 			}
+// 		}
+// 	}
+// 	console.log(result);
+// }
+// picture(100);
 
 
 // Extra Exercise 7B:
@@ -129,9 +218,33 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // .*.*.
 // *****
 
-
-
-
+// for (var i = 0; i < 3; i++) {
+// 	var result = ["","",""];
+// 	if (i === 0) {
+// 		for (var j = 0; j < 5; j++) {
+// 			if (j === 2) {
+// 				result[i] += "*";
+// 			} else {
+// 				result[i] += ".";
+// 			}
+// 		}
+// 		console.log(result[i])
+// 	} else if (i === 1) {
+// 		for (var k = 0; k < 5; k++) {
+// 			if (k % 2 === 0) {
+// 				result[i] += ".";
+// 			} else {
+// 				result[i] += "*";
+// 			}
+// 		}
+// 		console.log(result[i])
+// 	} else if (i === 2) {
+// 		for (var l = 0; l < 5; l++) {
+// 			result[i] += "*";	
+// 		}
+// 		console.log(result[i]);
+// 	}
+// }
 
 
 
