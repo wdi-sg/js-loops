@@ -281,39 +281,82 @@
 // *****
 
 // build 1 string per line
-for (i=1; i<=3; i++) {
-  // Initialize all characters to dots
-  var dotString = [".", ".", ".", ".", "."];
+// for (i = 1; i <= 3; i++) {
+//   // Initialize all characters to dots
+//   var dotString = [".", ".", ".", ".", "."];
 
-  // change dots into stars depending on the line number
-  // choose to use the symmetry by converting dots into starts from the center
-  for (j = 0; j < i; j++) {
-    dotString[2 - j] = "*";
-    dotString[2 + j] = "*";
-  }
+//   // change dots into stars depending on the line number
+//   // choose to use the symmetry by converting dots into starts from the center
+//   for (j = 0; j < i; j++) {
+//     dotString[2 - j] = "*";
+//     dotString[2 + j] = "*";
+//   }
 
-  // special case for second line.
-  // if we don't put that we will obtain second line like this:
-  // .....
-  // .***.
-  // *****
+//   // special case for second line.
+//   // if we don't put that we will obtain second line like this:
+//   // ..*..
+//   // .***.
+//   // *****
 
-  if (i === 2) {
-    dotString[2] = ".";
-  }
+//   if (i === 2) {
+//     dotString[2] = ".";
+//   }
 
-  // building the actual output string by concatenating the individual characters
-  var finalString = "";
-  for (k = 0; k < dotString.length; k++) {
-    finalString += dotString[k];
-  }
+//   // turn array into string
+//   // building the actual output string by concatenating the individual characters
+//   var finalString = "";
+//   for (k = 0; k < dotString.length; k++) {
+//     finalString += dotString[k];
+//   }
 
-  // Display the final string
-  console.log(finalString);
-}
+//   // Display the final string
+//   console.log(finalString);
+// }
 
+// // Option 2 for generic triangle
+// // Building the actual output string by concatenating the individual
+// // characters.
+// var arrayToString = function(array) {
+//   var finalString = "";
+//   for (k = 0; k < array.length; k++) {
+//     finalString += array[k];
+//   }
+//   return finalString;
+// }
 
+// var buildTriangle = function(numberOfColumns) {
+//   if (numberOfColumns % 2 == 0) {
+//     console.log("The number of columns needs to be odd!!!!!!");
+//     return;
+//   }
+//   // We build 1 line at a time.
+//   for (i=0; i<(numberOfColumns+1)/2 - 1; i++) {
+//     var centerIndex = (numberOfColumns - 1) / 2;
+//     // Initialize all characters to dots.
+//     var currentLineArray = [];
+//     for (j = 0; j<numberOfColumns; j++) {
+//       currentLineArray.push(".");
+//     }
 
+//     // Change dots into stars depending on the line number.
+//     // Here, we choose to use the symmetry by converting dots into starts
+//     // from the center.
+//     currentLineArray[centerIndex - i] = "*";
+//     currentLineArray[centerIndex + i] = "*";
 
+//     // Display the current line string
+//     var finalString = arrayToString(currentLineArray);
+//     console.log(finalString);
+//   }
+//   var lastLineArray = [];
+//   for (j = 0; j<numberOfColumns; j++) {
+//     lastLineArray.push("*");
+//   }
+//   // Display the current line string
+//   var finalString = arrayToString(lastLineArray);
+//   console.log(finalString);
+// }
 
-
+// // Only needs to specify the number of columns, because the required number
+// // of rows is then: numberOfRows = (numberOfColumns + 1) / 2
+// buildTriangle(45);
