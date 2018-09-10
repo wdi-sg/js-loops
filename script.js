@@ -142,10 +142,12 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // Explain the mistake in a comment on the line/lines that you think the mistake is at.
 // Correct the code.
 
+/* Corrected code:
 for (var i = 0; i < testArray.length; i++) {
   var name = testArray[i];
   console.log(name);
  };
+ */
 
 // Extra Exercise 6: Merging and Sorting Arrays
 // ============================================
@@ -153,26 +155,31 @@ for (var i = 0; i < testArray.length; i++) {
 // E.g. if the input arrays were var arr1 = [3, 6, 11] and var arr2 = [2, 4, 5, 8, 9] then mergeSortArrays(arr1, arr2)
 // should return [2, 3, 4, 5, 6, 8, 9, 11].
 
-
-
-
-
-
-
-
-
-
+var mergeSortArrays = function (arr1, arr2) {
+  var output = arr1.concat(arr2);
+  output.sort(function(a, b){return a-b});
+  return output;
+}
 
 // Extra Exercise 7A:
 // Use loops to console log the following pictures
 // ===============================================
 // .*.X.*.X.*.X.*. (This pattern continues. Your loop should be able to console.log as long a pattern as required. Each iteration of your loop should console.log only 1 character.)
 
+var pattern = function (length) {
+  output = "";
 
-
-
-
-
+  for (var i = 1; i <= length; i++) {
+    if (i % 4 === 0) {
+      output += "X";
+    } else if (i % 2 === 0) {
+      output += "*";
+    } else {
+      output += ".";
+    }
+  }
+  return output;
+}
 
 // Extra Exercise 7B:
 // (An equilateral triangle with sides of length 3.)
@@ -181,3 +188,16 @@ for (var i = 0; i < testArray.length; i++) {
 // ..*..
 // .*.*.
 // *****
+
+var trianglePattern = function (length) {
+  for (var i = 1; i <= length; i++) {
+
+    if (i % 3 === 0) {
+      console.log("*****");
+    } else if (i % 3 === 1) {
+      console.log("..*..");
+    } else if (i % 3 === 2) {
+      console.log(".*.*.");
+    }
+  }
+}
