@@ -118,14 +118,13 @@ var Phonebook = {
 
 var reverseObject = function (input) {
   var output = {};
+  var newKeys = Object.keys(input);
+  var newValues = Object.values(input);
 
-  for (i in input) {
-    var newKey = Object.values(input)[i];
-    var newValue = Object.keys(input)[i];
-    output[newKey] = newValue;
+  for (i in newKeys) {
+    output[newValues[i]] = newKeys[i];
   }
   return output;
-  //doesn't work yet
 }
 
 // Exercise 5
