@@ -10,21 +10,29 @@
 // Hint: What's the difference between a do-while loop and a while loop?
 
 
+// var random = 1+ Math.floor(Math.random()*9);
+// console.log(random);
 
+// var userInput = parseInt(prompt("Guess the number!"));
 
-
-
+// while(userInput !== random){
+//     var userInput = parseInt(prompt("Nope! Guess again."));
+// }
+// if(userInput === random){
+//     alert("You got the number!");
+// }
 
 // Exercise 2: Reversing a String
 // ==============================
 // Write a function that takes a string as an argument and returns its reverse. For example, reverseString("abc defg")
 // should return "gfed cba".
 
+// var reverseString = function(word){
+//   var newWord = word.split('').reverse().join('');
+//   console.log("Reversed:", newWord);
+// }
 
-
-
-
-
+// reverseString("italy");
 
 
 // Exercise 3
@@ -38,8 +46,45 @@ var numArray = [3, 9, 2, 5, 3, 6, 7, 4, 8, 1, 4, 10, 21, 43, 56, 23, 54, 94, 94,
 // 4. return an array with only odd numbers from the input array, e.g. onlyOdd([1,2,3,4,5]) should return [1,3,5]
 // 5. (Bonus) return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
 
+// var revArr = [];
+
+// for(i=numArray.length-1;i>0;i--){
+//     var revArrIn = numArray[i];
+//     revArr.push(revArrIn);
+// }
+// console.log("numArray reversed:",revArr);
 
 
+// var multiplyArr = [];
+
+// for(i=0; i<numArray.length-1; i++){
+//     var multiplyArrIn = numArray[i]*2;
+//     multiplyArr.push(multiplyArrIn);
+// }
+// console.log("numArray multiplied by 2:", multiplyArr);
+
+
+// var sum = numArray.reduce((a, b) => a + b, 0);
+// console.log(sum);
+
+
+// var oddNumbers = [];
+
+// for (i=0; i<numArray.length-1; i++){
+//     if(numArray[i]%2 !== 0){
+//     oddNumbers.push(numArray[i]);
+//     }
+// };
+// console.log(oddNumbers);
+
+var addArr =[];
+
+for (i=0; i<numArray.length-1; i++){
+    var newArray = numArray[i] + numArray[i+1];
+        addArr.push(newArray);
+}
+
+console.log(addArr);
 
 
 
