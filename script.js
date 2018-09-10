@@ -9,23 +9,34 @@
 // Once he guesses it correctly, end the loop.
 // Hint: What's the difference between a do-while loop and a while loop?
 
+var guessNumber = function () {
+  var number = Math.floor(Math.random()*10 + 1);
+  var guess;
 
+  guess = parseInt(prompt("Guess a number between 1 and 10."));
 
+  while (guess !== number) {
+    guess = parseInt(prompt("Nope. Guess another number between 1 and 10."));
+  }
 
-
-
+  if (guess === number) {
+    alert("You guessed the number correctly!");
+  }
+}
 
 // Exercise 2: Reversing a String
 // ==============================
 // Write a function that takes a string as an argument and returns its reverse. For example, reverseString("abc defg")
 // should return "gfed cba".
 
+var reverseString = function (input) {
+  var output = "";
 
-
-
-
-
-
+  for (i = input.length - 1; i >= 0; i--) {
+    output = output + input[i];
+  }
+  return output;
+}
 
 // Exercise 3
 // ==========
@@ -33,16 +44,62 @@ var numArray = [3, 9, 2, 5, 3, 6, 7, 4, 8, 1, 4, 10, 21, 43, 56, 23, 54, 94, 94,
 
 // Write functions that each take an array of numbers, e.g. numArray, and...
 // 1. return an array with the elements in reverse order, e.g. reverseArray([1,2,3]) should return [3,2,1]
+var reverseArray = function (input) {
+  var output = [];
+
+  for (i = input.length - 1 ; i >=0; i--) {
+    output.push(input[i]);
+  }
+  return output;
+}
+
 // 2. return an array with each element of the input array multiplied by 2, e.g. double([1,2,3]) should return [2,4,6]
+var double = function(input) {
+  var output = [];
+
+  for (i in input) {
+    output.push(2 * input[i]);
+  }
+  return output;
+}
+
 // 3. return the sum up all the elements of the input array, e.g. sum([1,2,3]) should return 6
+var sum = function (input) {
+  var output = 0;
+
+  for (i in input) {
+    output += input[i];
+  }
+  return output;
+}
+
 // 4. return an array with only odd numbers from the input array, e.g. onlyOdd([1,2,3,4,5]) should return [1,3,5]
+var onlyOdd = function(input) {
+  var output = [];
+
+  for (i in input) {
+    if (input[i] % 2 === 1) {
+      output.push(input[i]);
+    }
+  }
+  return output;
+}
+
 // 5. (Bonus) return an array where each element in this new array is the sum of the element before it and the element in its current position in the old array, e.g. the first few elements in this new array would be `[3, 12, 11, 7, 8, ...]`
+var arrayAndPrevious = function (input) {
+  var outputSum = 0;
+  var output = [];
 
-
-
-
-
-
+  for (i in input) {
+    if (i > 0) {
+      outputSum = parseInt(input[i]) + parseInt(input[i - 1]);
+      output.push(outputSum);
+    } else {
+      output.push(input[i]);
+    }
+  }
+  return output;
+}
 
 // Exercise 4
 // ==========
@@ -59,16 +116,17 @@ var Phonebook = {
     "Herman":   63436894,
 };
 
+var reverseObject = function (input) {
+  var output = {};
 
-
-
-
-
-
-
-
-
-
+  for (i in input) {
+    var newKey = Object.values(input)[i];
+    var newValue = Object.keys(input)[i];
+    output[newKey] = newValue;
+  }
+  return output;
+  //doesn't work yet
+}
 
 // Exercise 5
 // ==========
@@ -85,14 +143,10 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // Explain the mistake in a comment on the line/lines that you think the mistake is at.
 // Correct the code.
 
-
-
-
-
-
-
-
-
+for (var i = 0; i < testArray.length; i++) {
+  var name = testArray[i];
+  console.log(name);
+ };
 
 // Extra Exercise 6: Merging and Sorting Arrays
 // ============================================
@@ -128,12 +182,3 @@ var testArray = ["Alice", "Bobby", "Charles", "Daniel", "Elise", "Farnsworth", "
 // ..*..
 // .*.*.
 // *****
-
-
-
-
-
-
-
-
-
